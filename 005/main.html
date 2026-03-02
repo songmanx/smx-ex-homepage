@@ -1,0 +1,698 @@
+<html>
+ <head>
+  <style type=text/css>
+ A:link    {text-decoration:none;}
+ A:visited {text-decoration:none;}
+ A:active  {text-decoration:none;} 
+ A:hover   {text-decoration:underline;}
+   .i10 {z-index:4;
+         position:absolute;
+         top:10px;
+         left:40px;}
+   .i20 {z-index:4;
+         position:absolute;
+         top:10px;
+         left:422px;}
+   .i21 {z-index:4;
+         position:absolute;
+         top:70px;
+         left:662px;}
+   .i30 {z-index:4;
+         position:absolute;
+         top:337px;
+         left:20px;}
+   .i40 {z-index:4;
+         position:absolute;
+         top:337px;
+         left:402px;}
+   .i50 {z-index:4;
+         position:absolute;
+         top:664px;
+         left:40px;}
+   .i60 {z-index:4;
+         position:absolute;
+         top:664px;
+         left:402px;}
+   .i61 {z-index:4;
+         position:absolute;
+         top:694px;
+         left:673px;}
+   .s01 {z-index:3;
+         position:absolute;
+         top:0px;
+         left:0px;}
+   .s02 {z-index:3;
+         position:absolute;
+         top:0px;
+         left:753px;}
+   .s03 {z-index:3;
+         position:absolute;
+         top:970px;
+         left:0px;}
+   .s04 {z-index:3;
+         position:absolute;
+         top:970px;
+         left:753px;}
+   .s11 {z-index:4;
+         position:absolute;
+         top:20px;
+         left:20px;}
+   .s12 {z-index:4;
+         position:absolute;
+         top:20px;
+         left:361px;}
+   .s13 {z-index:4;
+         position:absolute;
+         top:307px;
+         left:20px;}
+   .s14 {z-index:4;
+         position:absolute;
+         top:307px;
+         left:361px;}
+   .s21 {z-index:4;
+         position:absolute;
+         top:20px;
+         left:402px;}
+   .s22 {z-index:4;
+         position:absolute;
+         top:20px;
+         left:743px;}
+   .s23 {z-index:4;
+         position:absolute;
+         top:307px;
+         left:402px;}
+   .s24 {z-index:4;
+         position:absolute;
+         top:307px;
+         left:743px;}
+   .s31 {z-index:4;
+         position:absolute;
+         top:347px;
+         left:20px;}
+   .s32 {z-index:4;
+         position:absolute;
+         top:347px;
+         left:361px;}
+   .s33 {z-index:4;
+         position:absolute;
+         top:634px;
+         left:20px;}
+   .s34 {z-index:4;
+         position:absolute;
+         top:634px;
+         left:361px;}
+   .s41 {z-index:4;
+         position:absolute;
+         top:347px;
+         left:402px;}
+   .s42 {z-index:4;
+         position:absolute;
+         top:347px;
+         left:743px;}
+   .s43 {z-index:4;
+         position:absolute;
+         top:634px;
+         left:402px;}
+   .s44 {z-index:4;
+         position:absolute;
+         top:634px;
+         left:743px;}
+   .s51 {z-index:4;
+         position:absolute;
+         top:674px;
+         left:20px;}
+   .s52 {z-index:4;
+         position:absolute;
+         top:674px;
+         left:361px;}
+   .s53 {z-index:4;
+         position:absolute;
+         top:961px;
+         left:20px;}
+   .s54 {z-index:4;
+         position:absolute;
+         top:961px;
+         left:361px;}
+   .s61 {z-index:4;
+         position:absolute;
+         top:674px;
+         left:402px;}
+   .s62 {z-index:4;
+         position:absolute;
+         top:674px;
+         left:743px;}
+   .s63 {z-index:4;
+         position:absolute;
+         top:961px;
+         left:402px;}
+   .s64 {z-index:4;
+         position:absolute;
+         top:961px;
+         left:743px;}
+   .t0 {z-index:1;
+         position:absolute;
+         top:0px;
+         left:0px;}
+   .t1 {z-index:2;
+         position:absolute;
+         top:20px;
+         left:20px;}
+   .t2 {z-index:2;
+         position:absolute;
+         top:20px;
+         left:402px;}
+   .t3 {z-index:2;
+         position:absolute;
+         top:347px;
+         left:20px;}
+   .t4 {z-index:2;
+         position:absolute;
+         top:347px;
+         left:402px;}
+   .t5 {z-index:2;
+         position:absolute;
+         top:674px;
+         left:20px;}
+   .t6 {z-index:2;
+         position:absolute;
+         top:674px;
+         left:402px;}
+  </style>
+<script LANGUAGE="JavaScript"> 
+<!-- 
+if (document.images) { //if image object is available 
+img1on = new Image(); // MouseOver Images 
+img1on.src = "image/planner_1.jpg"; 
+img2on = new Image(); 
+img2on.src = "image/family_01_1.jpg"; 
+img3on = new Image(); 
+img3on.src = "image/details01_1.jpg"; 
+img4on = new Image(); 
+img4on.src = "image/ccm00_1.jpg"; 
+img1off = new Image(); // MouseOut Images 
+img1off.src = "image/planner.jpg"; 
+img2off = new Image(); 
+img2off.src = "image/family_01.jpg"; 
+img3off = new Image(); 
+img3off.src = "image/details01.jpg"; 
+img4off = new Image(); 
+img4off.src = "image/ccm00.jpg"; 
+} 
+function imgOn(imgName) { 
+if (document.images) { 
+document[imgName].src = eval(imgName + "on.src"); }} 
+function imgOff(imgName) { 
+if (document.images) { 
+document[imgName].src = eval(imgName + "off.src"); }} 
+button_a1=new Image(); 
+button_b1=new Image(); 
+button_c1=new Image(); 
+button_d1=new Image(); 
+//--> 
+
+</script>
+ </head>
+ <body> 
+
+
+<!--전체밑바탕-->
+  <table border=0 cellpadding=0 cellspacing=0 class=t0 width=783 height=1000>
+   <tr><td bgcolor=E5EFF2></td></tr>
+  </table>  
+  <img src=image/side11.jpg class=s01>
+  <img src=image/side12.jpg class=s02>
+  <img src=image/side13.jpg class=s03>
+  <img src=image/side14.jpg class=s04>
+
+
+<!--voice NOTICE 바탕-->
+<table border=0 cellpadding=0 cellspacing=0 class=t1 width=361 height=307>
+ <tr>
+  <td width=10 height=10 bgcolor=EBD1B8></td>
+  <td width=5 height=10 bgcolor=EBD1B8></td>
+  <td width=331 height=10 bgcolor=EBD1B8></td>
+  <td width=5 height=10 bgcolor=EBD1B8></td>
+  <td width=10 height=10 bgcolor=EBD1B8></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=EBD1B8></td>
+  <td width=5 height=5 bgcolor=EFE8DD></td>
+  <td width=331 height=5 bgcolor=EFE8DD></td>
+  <td width=5 height=5 bgcolor=EFE8DD></td>
+  <td width=10 height=5 bgcolor=EBD1B8></td>
+ </tr>
+ <tr>
+  <td width=10 height=277 bgcolor=EBD1B8></td>
+  <td width=5 height=277 bgcolor=EFE8DD></td>
+  <td width=331 height=277 bgcolor=EFE8DD><font size=2 color=AE8051>
+
+
+ <br><br>
+
+
+ <b><font color=96734F>◎ 다가오는 2002하계수련회</font></b><br>
+<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;2002년도 하계수련회가 점점 다가옵니다.<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;모두들 기대 되시나요? 하나님께서 이번엔<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;저희에게 이번 수련회로 인해 부족했던 전도를<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;강조하시려는 것 같습니다. 모두 기도를 통해<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;이번 수련회를 준비합시다. 그리고 자주 얼굴이<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;보이지 않던 지체들도 같이 데리고 가면 좋겠죠~<br>
+
+
+</font></td>
+  <td width=5 height=277 bgcolor=EFE8DD></td>
+  <td width=10 height=277 bgcolor=EBD1B8></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=EBD1B8></td>
+  <td width=5 height=5 bgcolor=EFE8DD></td>
+  <td width=331 height=5 bgcolor=EFE8DD></td>
+  <td width=5 height=5 bgcolor=EFE8DD></td>
+  <td width=10 height=5 bgcolor=EBD1B8></td>
+ </tr>
+ <tr>
+  <td width=10 height=10 bgcolor=EBD1B8></td>
+  <td width=5 height=10 bgcolor=EBD1B8></td>
+  <td width=331 height=10 bgcolor=EBD1B8></td>
+  <td width=5 height=10 bgcolor=EBD1B8></td>
+  <td width=10 height=10 bgcolor=EBD1B8></td>
+ </tr>
+</table>
+<img src=image/main_s11.jpg class=s11>
+<img src=image/main_s12.jpg class=s12>
+<img src=image/main_s13.jpg class=s13>
+<img src=image/main_s14.jpg class=s14>
+
+
+<!--voice NOTICE 기본꾸밈-->
+<img src=image/main_t1.jpg class=i10>
+
+
+<!--voice EVENTS & SCHEDULE 바탕-->
+<table border=0 cellpadding=0 cellspacing=0 class=t2 width=361 height=307>
+ <tr>
+  <td width=10 height=10 bgcolor=B8CBEB></td>
+  <td width=5 height=10 bgcolor=B8CBEB></td>
+  <td width=331 height=10 bgcolor=B8CBEB></td>
+  <td width=5 height=10 bgcolor=B8CBEB></td>
+  <td width=10 height=10 bgcolor=B8CBEB></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=B8CBEB></td>
+  <td width=5 height=5 bgcolor=DDE6EF></td>
+  <td width=331 height=5 bgcolor=DDE6EF></td>
+  <td width=5 height=5 bgcolor=DDE6EF></td>
+  <td width=10 height=5 bgcolor=B8CBEB></td>
+ </tr>
+ <tr>
+  <td width=10 height=277 bgcolor=B8CBEB></td>
+  <td width=5 height=277 bgcolor=DDE6EF></td>
+  <td width=331 height=277 bgcolor=DDE6EF><font size=2 color=6D87B2>
+<br>
+  <font color=586A86><b>◎ 2002년 7월의 행사◎</b>
+ <br>
+ ㆍ첫째주일(7/ 7): 월례회, 생일축하<br>
+ ㆍ둘째주일(7/14): 타·군 지체 챙기기<br>
+ ㆍ셋째주일(7/21): 5분 스피치<br>
+ ㆍ넷째주일(7/28): 성가대<br> 
+</font>
+<b>☞ Voice 2002 하계 수련회</b><br>
+ -일시 : 8월5일 ~ 8월8일<br>
+ -장소 : 김해 초량교회 수양관<br>
+<br>
+<b>☞ 리더훈련</b><br>
+ -일시 : 매주 토요일 오후 4시 30분<br>
+ -장소 : 보이스실<br>
+ -대상 : 조장, 임원, 부장
+
+
+</font></td>
+  <td width=5 height=277 bgcolor=DDE6EF></td>
+  <td width=10 height=277 bgcolor=B8CBEB></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=B8CBEB></td>
+  <td width=5 height=5 bgcolor=DDE6EF></td>
+  <td width=331 height=5 bgcolor=DDE6EF></td>
+  <td width=5 height=5 bgcolor=DDE6EF></td>
+  <td width=10 height=5 bgcolor=B8CBEB></td>
+ </tr>
+ <tr>
+  <td width=10 height=10 bgcolor=B8CBEB></td>
+  <td width=5 height=10 bgcolor=B8CBEB></td>
+  <td width=331 height=10 bgcolor=B8CBEB></td>
+  <td width=5 height=10 bgcolor=B8CBEB></td>
+  <td width=10 height=10 bgcolor=B8CBEB></td>
+ </tr>
+</table>
+<img src=image/main_s21.jpg class=s21>
+<img src=image/main_s22.jpg class=s22>
+<img src=image/main_s23.jpg class=s23>
+<img src=image/main_s24.jpg class=s24>
+
+
+<!--voice EVENTS & SCHEDULE 기본꾸밈-->
+<img src=image/main_t2.jpg class=i20>
+<a href=event/2002_06.html target=main onmouseover="imgOn('img1')" onmouseout="imgOff('img1')"><img src=image/planner.jpg class=i21 border=0 name=img1 alt="보이스 달력"></a>
+
+
+
+
+<!--voice INFORMATION 바탕-->
+<table border=0 cellpadding=0 cellspacing=0 class=t3 width=361 height=307>
+ <tr>
+  <td width=10 height=10 bgcolor=9EDAC4></td>
+  <td width=5 height=10 bgcolor=9EDAC4></td>
+  <td width=331 height=10 bgcolor=9EDAC4></td>
+  <td width=5 height=10 bgcolor=9EDAC4></td>
+  <td width=10 height=10 bgcolor=9EDAC4></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=9EDAC4></td>
+  <td width=5 height=5 bgcolor=DDEFE4></td>
+  <td width=331 height=5 bgcolor=DDEFE4></td>
+  <td width=5 height=5 bgcolor=DDEFE4></td>
+  <td width=10 height=5 bgcolor=9EDAC4></td>
+ </tr>
+ <tr>
+  <td width=10 height=277 bgcolor=9EDAC4></td>
+  <td width=5 height=277 bgcolor=DDEFE4></td>
+  <td width=331 height=277 bgcolor=DDEFE4><font size=2 color=4C8F77>
+<br><font color=316653 size=2>
+</font>
+<b>
+&nbsp;&nbsp;☞ am 11:00 대예배<br>
+&nbsp;&nbsp;☞ pm 12:20 점심식사(보이스실)<br>
+&nbsp;&nbsp;☞ pm 01:20 보이스 큰 모임</b><br>
+<b>&nbsp;&nbsp;☞ pm 03:00 조별 성경공부<br>
+</b>
+<font color=316653 size=2><b>◎ 섬기는 이들</b></font><br>
+&nbsp;&nbsp;<b>☞담당교역자</b> : 정인봉 목사<br>
+&nbsp;&nbsp;<b>☞부장</b> : 문상운 &nbsp;&nbsp;<b>☞성가대장</b> : 손영팔<br>
+&nbsp;&nbsp;<b>☞간사</b> : 박판근ㆍ차우진ㆍ이영표ㆍ이화영ㆍ이행진<br>
+&nbsp;&nbsp;<b>☞임원진</b> : 오기훈ㆍ김정미ㆍ송정현ㆍ강현진<br>
+&nbsp;&nbsp;<b>☞찬양부장</b> : 최현경 &nbsp;&nbsp;<b>☞편집부장</b> : 한미애<br>
+&nbsp;&nbsp;<b>☞조장</b> : 김나영ㆍ김정미ㆍ문광춘ㆍ문정란<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㆍ강정임ㆍ반나영ㆍ이혜원ㆍ이국형<br>
+
+</font></td>
+  <td width=5 height=277 bgcolor=DDEFE4></td>
+  <td width=10 height=277 bgcolor=9EDAC4></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=9EDAC4></td>
+  <td width=5 height=5 bgcolor=DDEFE4></td>
+  <td width=331 height=5 bgcolor=DDEFE4></td>
+  <td width=5 height=5 bgcolor=DDEFE4></td>
+  <td width=10 height=5 bgcolor=9EDAC4></td>
+ </tr>
+ <tr>
+  <td width=10 height=10 bgcolor=9EDAC4></td>
+  <td width=5 height=10 bgcolor=9EDAC4></td>
+  <td width=331 height=10 bgcolor=9EDAC4></td>
+  <td width=5 height=10 bgcolor=9EDAC4></td>
+  <td width=10 height=10 bgcolor=9EDAC4></td>
+ </tr>
+</table>
+<img src=image/main_s31.jpg class=s31>
+<img src=image/main_s32.jpg class=s32>
+<img src=image/main_s33.jpg class=s33>
+<img src=image/main_s34.jpg class=s34>
+
+
+<!--voice INFORMATION 기본꾸밈-->
+<img src=image/main_t3.jpg class=i30>
+
+
+<!--voice FAMILY 바탕-->
+<table border=0 cellpadding=0 cellspacing=0 class=t4 width=361 height=307>
+ <tr>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=331 height=10 bgcolor=E5E4AC colspan=2></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=331 height=5 bgcolor=EEEFDD colspan=2></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=277 bgcolor=E5E4AC></td>
+  <td width=5 height=277 bgcolor=EEEFDD></td>
+  <td width=165 height=277 bgcolor=EEEFDD align=center><font size=2 color=9F9E58>
+
+<br><br><br>
+<b>◎ 7월에 태어난 사람 ◎</b><br>
+<br><br>
+
+
+오창희 (00) &nbsp;&nbsp;&nbsp;&nbsp;7월 &nbsp;&nbsp;5일<br>
+배수연 (01) &nbsp;&nbsp;&nbsp;&nbsp;7월 22일<br>
+장소라 (98) &nbsp;&nbsp;&nbsp;&nbsp;7월 25일<br>
+이진아 (00) &nbsp;&nbsp;&nbsp;&nbsp;7월 28일<br>
+
+<br><br><br><br><br>
+</font></td>
+  <td width=166 height=277 bgcolor=EEEFDD align=center><font size=2 color=B1B04E>
+
+
+<table border=0 cellpadding=0 cellspacing=0 width=150 height=160>
+ <tr>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=120 height=10 bgcolor=E5E4AC></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=120 height=5 bgcolor=EEEFDD></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=120 bgcolor=E5E4AC></td>
+  <td width=5 height=120 bgcolor=EEEFDD></td>
+  <td width=120 height=120 bgcolor=EEEFDD>
+  <font size=2 color=9F9E58>
+
+
+<b>※새신자※</b><br>
+ㆍ이름:<b>김경갑</b>(99)<br>
+ㆍ폰:018-678-4742<br>
+ㆍ생일:1980.3.19(-)<br>
+
+
+
+
+  </td>
+  <td width=5 height=120 bgcolor=EEEFDD></td>
+  <td width=10 height=120 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=120 height=5 bgcolor=EEEFDD></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=120 height=10 bgcolor=E5E4AC></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+ </tr>
+</table>
+<a href="#" onclick="window.open('family_02e.html','small','width=300,height=400,scrollbar=no,menubar=no,status=no,location=no,toolbar=no')" onmouseover="imgOn('img2')" onmouseout="imgOff('img2')">
+<img src=image/family_01.jpg border=0 name=img2 alt="새내기 02기 E-Mail">
+</a>
+
+</font></td>
+  <td width=5 height=257 bgcolor=EEEFDD></td>
+  <td width=10 height=257 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=331 height=5 bgcolor=EEEFDD colspan=2></td>
+  <td width=5 height=5 bgcolor=EEEFDD></td>
+  <td width=10 height=5 bgcolor=E5E4AC></td>
+ </tr>
+ <tr>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=331 height=10 bgcolor=E5E4AC colspan=2></td>
+  <td width=5 height=10 bgcolor=E5E4AC></td>
+  <td width=10 height=10 bgcolor=E5E4AC></td>
+ </tr>
+</table>
+<img src=image/main_s41.jpg class=s41>
+<img src=image/main_s42.jpg class=s42>
+<img src=image/main_s43.jpg class=s43>
+<img src=image/main_s44.jpg class=s44>
+
+
+<!--voice FAMILY 기본꾸밈-->
+<img src=image/main_t4.jpg class=i40>
+
+
+<!--CCM 바탕-->
+<table border=0 cellpadding=0 cellspacing=0 class=t5 width=361 height=307>
+ <tr>
+  <td width=10 height=10 bgcolor=EBB8D1></td>
+  <td width=5 height=10 bgcolor=EBB8D1></td>
+  <td width=331 height=10 bgcolor=EBB8D1 colspan=2></td>
+  <td width=5 height=10 bgcolor=EBB8D1></td>
+  <td width=10 height=10 bgcolor=EBB8D1></td>
+ </tr>
+ <tr>
+  <td width=10 height=15 bgcolor=EBB8D1></td>
+  <td width=5 height=15 bgcolor=EFDDE6></td>
+  <td width=331 height=15 bgcolor=EFDDE6 colspan=2></td>
+  <td width=5 height=15 bgcolor=EFDDE6></td>
+  <td width=10 height=15 bgcolor=EBB8D1></td>
+ </tr>
+ <tr>
+  <td width=10 height=267 bgcolor=EBB8D1 rowspan=4></td>
+  <td width=5 height=267 bgcolor=EFDDE6 rowspan=4></td>
+  <td width=331 height=35 bgcolor=EFDDE6 colspan=2 align=right><font size=2 color=C26E97>
+<b><font color=8F4A6C>◎ 모던워쉽앨범 ◎ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b>
+</font></td>
+  <td width=5 height=267 bgcolor=EFDDE6 rowspan=4></td>
+  <td width=10 height=267 bgcolor=EBB8D1 rowspan=4></td>
+ </tr>
+ <tr>
+<td width=165 height=100 bgcolor=EFDDE6 align=center><font size=2 color=C26E97>
+<a href=http://mall.godpeople.com/mall/?G=1001055732-6 target=_blank>
+<img src=http://img.godpeople.com/data/goods/3/2/1001055732-6/sl1001055732-6_l.jpg border=0>
+</a>
+</td>
+<td width=166 height=100 bgcolor=EFDDE6 align=center><font size=2 color=C26E97>
+<a href=http://mall.godpeople.com/mall/?G=1012285734-8 target=_blank>
+<img src=http://img.godpeople.com/data/goods/3/4/1012285734-8/1012285734-8_100.gif height=90 border=0>
+</a>
+</td>
+</tr>
+<tr>
+<td width=165 height=40 bgcolor=EFDDE6 align=center>
+<a href=http://mall.godpeople.com/mall/?G=1001055732-6 target=_blank><font size=2 color=C3347A>
+디사이플스 1집<br>
+"Run"
+</a>
+</td>
+<td width=166 height=40 bgcolor=EFDDE6 align=center>
+<a href=http://mall.godpeople.com/mall/?G=1012285734-8 target=_blank><font size=2 color=C3347A>
+소리엘 Modern Worship<br>
+"쉐마"
+</a>
+</td>
+ </tr>
+ <tr>
+<td width=331 height=92 bgcolor=EFDDE6 colspan=2 align=center><font size=2 color=8F4A6C>
+<b>◎ 업데이트 예정中 ◎</b>
+<br><br>
+<a href="#" onclick="window.open('ccm00.html','small','width=400,height=500,scrollbars=no,menubar=no,status=no,location=no,toolbar=no')"onmouseover="imgOn('img4')" onmouseout="imgOff('img4')">
+<img src=image/ccm00.jpg border=0 alt="보이스 성가대 기본곡" name=img4></a>
+
+</font>
+</td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=EBB8D1></td>
+  <td width=5 height=5 bgcolor=EFDDE6></td>
+  <td width=331 height=5 bgcolor=EFDDE6 colspan=2></td>
+  <td width=5 height=5 bgcolor=EFDDE6></td>
+  <td width=10 height=5 bgcolor=EBB8D1></td>
+ </tr>
+ <tr>
+  <td width=10 height=10 bgcolor=EBB8D1></td>
+  <td width=5 height=10 bgcolor=EBB8D1></td>
+  <td width=331 height=10 bgcolor=EBB8D1 colspan=2></td>
+  <td width=5 height=10 bgcolor=EBB8D1></td>
+  <td width=10 height=10 bgcolor=EBB8D1></td>
+ </tr>
+</table>
+<img src=image/main_s51.jpg class=s51>
+<img src=image/main_s52.jpg class=s52>
+<img src=image/main_s53.jpg class=s53>
+<img src=image/main_s54.jpg class=s54>
+
+
+<!--voice CCM 기본꾸밈-->
+<img src=image/main_t5.jpg class=i50>
+
+
+<!--DETAIL 바탕-->
+<table border=0 cellpadding=0 cellspacing=0 class=t6 width=361 height=307>
+ <tr>
+  <td width=10 height=10 bgcolor=DEB8EB></td>
+  <td width=5 height=10 bgcolor=DEB8EB></td>
+  <td width=331 height=10 bgcolor=DEB8EB></td>
+  <td width=5 height=10 bgcolor=DEB8EB></td>
+  <td width=10 height=10 bgcolor=DEB8EB></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=DEB8EB></td>
+  <td width=5 height=5 bgcolor=EADDEF></td>
+  <td width=331 height=5 bgcolor=EADDEF></td>
+  <td width=5 height=5 bgcolor=EADDEF></td>
+  <td width=10 height=5 bgcolor=DEB8EB></td>
+ </tr>
+ <tr>
+  <td width=10 height=277 bgcolor=DEB8EB></td>
+  <td width=5 height=277 bgcolor=EADDEF></td>
+  <td width=331 height=277 bgcolor=EADDEF><font size=2 color=A873BA>
+
+
+<font color=7B6084><br><br>
+&nbsp;&nbsp;저 혼자만의 좁은 생각보단<br>
+&nbsp;&nbsp;보이스 지체들의 생각과 함께하여<br>
+&nbsp;&nbsp;보이스까페를 만들어 나가고 싶습니다.<br>
+&nbsp;&nbsp;그래서 임시로 게시판을 만들었습니다.<br>
+&nbsp;&nbsp;이곳에 아래와 같은 까페 대한 도움말을 남겨주세요.<br>
+<br><b>
+&nbsp;&nbsp;&nbsp;1. 각 메인공간의 활용 아이디어.<br>
+&nbsp;&nbsp;&nbsp;2. 추가하고픈 게시판, 소모임. 또는 이용방법.<br>
+&nbsp;&nbsp;&nbsp;3. 까페만드는데 도움될만한 까페, 홈페쥐주소.<br>
+&nbsp;&nbsp;&nbsp;4. 개편된 까페에 대한 불편한 점이나 좋은 점.<br>
+</b></font><br>
+
+
+</font></td>
+  <td width=5 height=277 bgcolor=EADDEF></td>
+  <td width=10 height=277 bgcolor=DEB8EB></td>
+ </tr>
+ <tr>
+  <td width=10 height=5 bgcolor=DEB8EB></td>
+  <td width=5 height=5 bgcolor=EADDEF></td>
+  <td width=331 height=5 bgcolor=EADDEF></td>
+  <td width=5 height=5 bgcolor=EADDEF></td>
+  <td width=10 height=5 bgcolor=DEB8EB></td>
+ </tr>
+ <tr>
+  <td width=10 height=10 bgcolor=DEB8EB></td>
+  <td width=5 height=10 bgcolor=DEB8EB></td>
+  <td width=331 height=10 bgcolor=DEB8EB></td>
+  <td width=5 height=10 bgcolor=DEB8EB></td>
+  <td width=10 height=10 bgcolor=DEB8EB></td>
+ </tr>
+</table>
+<img src=image/main_s61.jpg class=s61>
+<img src=image/main_s62.jpg class=s62>
+<img src=image/main_s63.jpg class=s63>
+<img src=image/main_s64.jpg class=s64>
+
+
+<!--voice DETAILS 기본꾸밈-->
+<img src=image/main_t6.jpg class=i60>
+<a href="#" onclick="window.open('http://bbs4u.lycos.co.kr/board/viewboard.asp?bcode=fm2162859','small','width=800,height=600,scrollbar=yes,menubar=no,status=no,location=no,toolbar=no')" onmouseover="imgOn('img3')" onmouseout="imgOff('img3')"><img src=image/details01.jpg class=i61 border=0 alt="보이스까페 임시게시판" name=img3></a>
+
+ </body>
+</html>

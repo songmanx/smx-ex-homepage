@@ -1,0 +1,57 @@
+<html>
+ <head>
+  <style type=text/css>
+   body {margin-top:0px;
+         margin-left:0px;
+         margin-right:0px;
+         margin-bottom:0px;}
+  </style>
+  <script LANGUAGE="JavaScript">
+   <!--
+   if (document.images) {       //if image object is available     
+   img1on = new Image();           // MouseOver Images
+   img1on.src = "img/kn11.jpg"; 
+   img2on = new Image();
+   img2on.src = "img/kn12.jpg";
+   img3on = new Image();
+   img3on.src = "img/kn13.jpg";
+   img4on = new Image();
+   img4on.src = "img/kn14.jpg";
+   img5on = new Image();
+   img5on.src = "img/kn15.jpg";
+   img1off = new Image();           // MouseOut Images
+   img1off.src = "img/kn01.jpg"; 
+   img2off = new Image();
+   img2off.src = "img/kn02.jpg";
+   img3off = new Image();
+   img3off.src = "img/kn03.jpg";
+   img4off = new Image();
+   img4off.src = "img/kn04.jpg";
+   img5off = new Image();
+   img5off.src = "img/kn05.jpg";
+   }
+   function imgOn(imgName) {
+   if (document.images) {
+   document[imgName].src = eval(imgName + "on.src");        }}
+   function imgOff(imgName) {
+   if (document.images) {
+   document[imgName].src = eval(imgName + "off.src");        }}
+   button_a1=new Image();
+   button_b1=new Image();
+   button_c1=new Image();
+   button_d1=new Image();
+   //-->
+  </script>
+ </head>
+ <body bgcolor=6D4A24 text=c8b8a0>
+   <table border=0 cellspacing=0 cellpadding=0 width=550 height=25>
+    <tr>
+     <td width=110 height=25><a href=hiscof.html target=kn onmouseover="imgOn('img1')" onmouseout="imgOff('img1')"><img src=img/kn01.jpg border=0 alt="커피역사" name=img1></a></td>
+     <td width=110 height=25><a href=crecof.html target=kn onmouseover="imgOn('img2')" onmouseout="imgOff('img2')"><img src=img/kn02.jpg border=0 alt="생산지역" name=img2></a></td>
+     <td width=110 height=25><a href=delcof.html target=kn onmouseover="imgOn('img3')" onmouseout="imgOff('img3')"><img src=img/kn03.jpg border=0 alt="커피의맛" name=img3></a></td>
+     <td width=110 height=25><a href=woncof.html target=kn onmouseover="imgOn('img4')" onmouseout="imgOff('img4')"><img src=img/kn04.jpg border=0 alt="원두커피" name=img4></a></td>
+     <td width=110 height=25><a href=detcof.html target=kn onmouseover="imgOn('img5')" onmouseout="imgOff('img5')"><img src=img/kn05.jpg border=0 alt="커피성분" name=img5></a></td>
+    </tr>
+   </table>
+ </body>
+</html>

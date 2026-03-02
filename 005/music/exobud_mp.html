@@ -1,0 +1,280 @@
+<HTML>
+ <HEAD>
+
+  <TITLE>▒ ExoBUD™ MP v1.8 ▒</TITLE>
+  <META name="Author" content="ExoBUD, Jinwoong Yu">
+  <META name="Keywords" content="ExoBUD™ MP">
+  <META name="Description" content="mp3,asf,wav,mid 등 뮤직플레이어">
+  <META http-equiv="Content-Type" content="text/html; charset=euc-kr">
+
+  <STYLE type="text/css"><!-- 
+    A:link { COLOR: 6B8992; TEXT-DECORATION: none } 
+    A:hover { COLOR: E5EFF2; TEXT-DECORATION: none } 
+    A:active { COLOR: E5EFF2; TEXT-DECORATION: none } 
+    A:visited { COLOR: 6B8992; TEXT-DECORATION: none } 
+    body { MARGIN: 0px 0px 0px 0px; BACKGROUND:E5EFF2; cursor:crosshair;} 
+	.text{ FONT-FAMILY: 굴림; FONT-SIZE: 12px; color:6B8992; }
+	.button1 { BORDER-BOTTOM: BCD6DE 1px solid; BORDER-LEFT: BCD6DE 1px solid; 
+        	BORDER-RIGHT: BCD6DE 1px solid; BORDER-TOP: BCD6DE 1px solid; 
+	BACKGROUND-COLOR:E5EFF2; FONT-FAMILY: 굴림, verdana; COLOR:6B8992;} 
+    @font-face { font-family: wjsm; src:url(http://exobud.nayana.org/font/wj.eot); }
+
+--></STYLE>
+
+
+<SCRIPT language=Javascript src="exobud_mp.js"></SCRIPT>
+<SCRIPT language=Javascript><!--
+
+// ExoBUD™ MPlayer 1.8 [정식버전]
+// Copyright (Pe) 2001 ExoBUD™ , Design by Jinwoong, YU. 
+// Home : HTTP://exobud.nayana.org
+// E-Mail  : exobud@hanmail.net
+// ICQ     : 96138429
+// 본 소스(ExoBUD™ MPlayer)를 수정시에도 상기내용을 삭제하시면 안됩니다.
+// 본 소스의 내용을 수정시에도 수정자의 이름으로 임 의배포할 수 없습니다.
+// 본 소스로 인해 발생된 문제에 대해서는 어떠한 책임도 지지않습니다.
+// 본 소스를 본인 동의없이 화일의 일부 또는 전체 배포하거나 화일다운링크를 걸어두시면 안됩니다.
+// 소스 수정시 메뉴얼에 지정되지 않은 것을 수정하지 않도록 주의 하십시요.
+
+// 토글 버튼(Loop, Pause, Mute) 색상 정의하기 ( 유저설정부분)
+// 16진 형식(#cccccc)의 color 값은 반드시 #를 떼고 넣으세요
+
+var colorOfModeOn =  "BCD6DE" ;
+var colorOfModeOff = "E5EFF2" ;
+
+// Automatic Music Playing When It Loaded : Play(1, default) no(0) : 유저설정부분
+// 페이지가 로드 된후에 바로 음악을 재생할 것인지 결정하세요
+
+var ExoBUD_MP_PlayOnLoaded = 1;
+
+// PLAY MODE : Sequential(0, default) , RandomPlay(1) : 유저설정부분
+// 음악재생을 목록순으로 할 것인지, 무작위로 선택되게 할 것인지 결정하세요
+
+var ExoBUD_MP_PlayMode = 1; 
+
+// Show on Playing Music Title : Input Box (1, default) , Status Bar(2) , ALL Display (3), Hide(0) : 유저설정부분
+// 제목을 표시할 위치및 제목표시줄 감추기등 설정을 변경하세요
+
+var ExoBUD_MP_ShowTitle = 3; 
+
+// Show Volume Controll : Show (1) , hide (0) :유저설정부분
+// 볼륨 컨트롤러를 보여줄 것인지 결정하세요
+
+var ExoBUD_MP_ShowVCtrl = 1;
+
+// Show Play List button : Show (1) , hide (0) :유저설정부분
+// 플레이리스트 버튼을 감출것인지 결정하세요
+
+var ExoBUD_MP_ShowPList = 1;
+
+
+// 등록하려는 뮤직이 15개가 넘으면 ExoBUD_MP_PlayList() 에서 scrollbars=yes (auto로 설정하지말것) 로 설정하셔야 합니다. 
+
+function ExoBUD_MP_PlayList() { // ExoBUD™ MPlayer List Popping Up
+	window.open("./exobud_mplaylist.html" , "MPList", " width=280 height=500 toolbar=no location=no status=no directories=no scrollbars=yes resizable=no copyhistory=no");
+}
+
+
+// 플레이리스트를 등록하는 곳입니다. (유저설정부분)
+// ExoBUD_MP_AddPlayList('음악 파일의 경로(절대또는 상대경로)', '음악 제목'); 형식으로 써주시면 됩니다.
+// 상대경로로 사용할때는 exobud_mp.html 이 위치한 경로를 기준으로한 상대경로를 주시면 됩니다.
+// 경로에 대해 잘 모르시는 분은 좀 길더라도 절대경로형식으로 지정하면 문제없습니다.
+// 제목입력을 하지 않으면 'Track 번호' 만 표기됩니다.
+// 등록가능한 음악화일형식은 (MP3,WAV,MID 및 ASF, WMA 등 스트리밍화일)
+// 소스 수정이 완료되면 샘플뮤직을 그대로 사용하는 일이 없도록 해주십시요. ^^
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ExoBUD_MP_AddPlayList(" "," ");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--></SCRIPT>
+
+<!.. 사용자 설정사항이 모두 끝났습니다.  아래사항부터는 수정하지 마십시요 ..>
+
+<SCRIPT language=javascript for=ExoBUDMP Event=EndOfStream>
+	ExoBUD_MP_ChkLooping();
+</SCRIPT>
+
+<SCRIPT language=javascript for=ExoBUDMP Event=Error>
+	var ExoBUD_MP_ErrorTrack = ExoBUD_MP_CurrentTrack + 1
+	document.ExoBUD_MP_form.ShowTitle.value = "▒ 재생오류 ▒ [" + ExoBUD_MP_ErrorTrack + "] " + ExoBUD_MP_TrackName[ExoBUD_MP_CurrentTrack];
+	window.status = (' ▒ 현재 선택된 트랙에서 재생오류가 발생했습니다 : 잠시 후 다음곡을 재생합니다 ▒');
+	ExoBUD_MP_Error();
+</SCRIPT>
+
+</HEAD>
+
+<BODY OnLoad="ExoBUD_MP_Setting();this.focus();" style="overflow:hidden;"><form name="ExoBUD_MP_form" >
+<table width=700 height=20 border=0 cellspacing=0 cellpadding=0>
+<tr><td>
+
+<OBJECT id="ExoBUDMP" classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" 
+	codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"
+	type="application/x-oleobject" width=0 height=0 vspace=0 hspace=0 align="middle" style="left:0px; top:0px;">
+
+	<param name="AllowChangeDisplaySize" value="false"> 
+	<param name="AllowScan" value="true"> 
+	<param name="AnimationAtStart" value="false"> 
+	<param name="AudioStream" value="-1"> 
+	<param name="AutoRewind" value="true"> 
+	<param name="AutoSize" value="false"> 
+	<param name="AutoStart" value="true"> 
+	<param name="Balance" value="0"> 
+	<param name="BufferingTime" value="5"> 
+	<param name="ClickToPlay" value="true"> 
+	<param name="CurrentMarker" value="0"> 
+	<param name="CurrentPosition" value="-1"> 
+	<param name="CursorType" value="0"> 
+	<param name="DisplayBackColor" value="0"> 
+	<param name="DisplayForeColor" value="16777215"> 
+	<param name="DisplayMode" value="0"> 
+	<param name="DisplaySize" value="0"> 
+	<param name="EnableContextMenu" value="false"> 
+	<param name="Enabled" value="true"> 
+	<param name="EnableFullScreenControls" value="false"> 
+	<param name="EnablePositionControls" value="true"> 
+	<param name="EnableTracker" value="true"> 
+	<param name="InvokeURLs" value="true"> 
+	<param name="Language" value="-1"> 
+	<param name="Mute" value="false"> 
+	<param name="PlayCount" value="1"> 
+	<param name="PreviewMode" value="false"> 
+	<param name="Rate" value="1"> 
+	<param name="SelectionEnd" value="-1"> 
+	<param name="SelectionStart" value="-1"> 
+	<param name="SendErrorEvents" value="true"> 
+	<param name="SendKeyboardEvents" value="false"> 
+	<param name="SendMouseClickEvents" value="false"> 
+	<param name="SendMouseMoveEvents" value="false"> 
+	<param name="SendOpenStateChangeEvents" value="true"> 
+	<param name="SendPlayStateChangeEvents" value="true"> 
+	<param name="SendWarningEvents" value="true"> 
+	<param name="ShowAudioControls" value="false"> 
+	<param name="ShowCaptioning" value="false"> 
+	<param name="ShowControls" value="true"> 
+	<param name="ShowDisplay" value="false"> 
+	<param name="ShowGotoBar" value="false"> 
+	<param name="ShowPositionControls" value="false"> 
+	<param name="ShowStatusBar" value="false"> 
+	<param name="ShowTracker" value="false"> 
+	<param name="TransparentAtStart" value="false"> 
+	<param name="VideoBorder3D" value="true"> 
+	<param name="VideoBorderColor" value="0"> 
+	<param name="VideoBorderWidth" value="0"> 
+	<param name="Volume" value="-100"> 
+	<param name="WindowlessVideo" value="-1">
+</OBJECT>
+
+
+ <INPUT type="text" READONLY 
+	class ="button1" name="ShowTitle" value="" 
+	style="height:17; width:270; font-family:돋움, 굴림, verdana; font-size:11px; color:6B8992;">
+
+<INPUT TYPE="button" name="scope"  style="background: url(./scope.gif); border: #44a0f0 0px solid; width=16px; height=16;">
+
+<INPUT type="button" 
+	class ="button1" name="mutemode" value="M" 
+	onMouseOver = "window.status=('▒ ExoBUD™ MPlayer : Mute Mode ▒');this.style.cursor='hand'; return true;"
+	onClick="ExoBUD_MP_Mute(); this.blur();" 
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	style="height=16; width=16; font-size:11px;"><INPUT type="button" 
+
+	class ="button1" name="vdn" value="▼" 
+	onMouseOver = "window.status=('▒ ExoBUD™ MPlayer : 볼륨 내림 ▒');this.style.cursor='hand'; return true;"
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	onClick="ExoBUD_MP_VolDown(); this.blur();" 
+	style="height=16; width=15; font-size:12px;"><INPUT type="button"
+
+	class ="button1" name="vup" value="▲" 
+	onMouseOver = "window.status=('▒ ExoBUD™ MPlayer : 볼륨 올림 ▒');this.style.cursor='hand'; return true;"
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	onClick="ExoBUD_MP_VolUp(); this.blur();" 
+	style="height=16; width=15; font-size:12px;">
+
+<INPUT type="button" 
+	class ="button1" name="pmode" value="" 
+	onMouseOver = "window.status=('▒ ExoBUD™ MPlayer : 랜덤.순차 재생모드변경 ▒');this.style.cursor='hand'; return true;"
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	onCLick ="ExoBUD_MP_ChgMode(); this.blur();" 
+	style="height=16; width=16; font-size:11px;">
+
+ <INPUT type="button" 
+	class ="button1" name="loop" value="L" 
+	onMouseOver = "window.status=('▒ ExoBUD™ MPlayer : 현재트랙반복 ▒');this.style.cursor='hand'; return true;"
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	onCLick ="ExoBUD_MP_ChgLooping(); this.blur();" 
+	style="height=16; width=16; font-size:11px;">
+
+
+<INPUT type="button" 
+	class ="button1" name="prevt" value="≪" 
+	onClick="ExoBUD_MP_PrevTrack(); this.blur();" 
+	onMouseOver="window.status=('▒ ExoBUD™ MPlayer : 이전 트랙 ▒'); this.style.cursor='hand'; return true;" 
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	style="height=16; width=16; font-size:12px;"><INPUT type="button" 
+
+	class ="button1" name="pnpt" value="Ⅱ" 
+	onClick="ExoBUD_MP_PlayPause(); this.blur();"
+	onMouseOver="window.status=('▒ ExoBUD™ MPlayer : 일시정지▒'); this.style.cursor='hand'; return true;" 
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	style="height=16; width=16; font-size:12px;"><INPUT type="button" 
+
+	class ="button1" name="stopt" value="■"
+	onClick="ExoBUD_MP_StopTrack(); this.blur();" 
+	onMouseOver="window.status=('▒ ExoBUD™ MPlayer : 재생 멈춤'); this.style.cursor='hand'; return true;"
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	style="height=16; width=16; font-size:12px;"><INPUT type="button" 
+
+	class ="button1" name="playt" value="▶" 
+	onClick="ExoBUD_MP_Play(); this.blur();" 
+	onMouseOver="window.status=('▒ ExoBUD™ MPlayer :재생 ▒'); this.style.cursor='hand'; return true;"
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	style="height=16; width=16; font-size:12px;"><INPUT type="button"
+
+	class ="button1" name="nextt" value="≫" 
+	onClick="ExoBUD_MP_NextTrack(); this.blur();" 
+	onMouseOver="window.status=('▒ ExoBUD™ MPlayer : 다음 트랙 ▒'); this.style.cursor='hand'; return true;" 
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;" 
+	style="height=16; width=16; font-size:12px;">
+
+ <INPUT type="button" 
+	class ="button1" name="plist" value="TL" 
+	onClick="ExoBUD_MP_PlayList(); this.blur();"
+	onMouseOver="window.status=('▒ ExoBUD™ MPlayer : 플레이 리스트▒'); this.style.cursor='hand'; return true;" 
+	onMouseOut="window.status=('▒ ExoBUD™ MPlayer ▒'); return true;"
+	style="height=16; width=18; font-size:11px;">
+</td></tr></table>
+</FORM>
+
+</BODY>
+</HTML>

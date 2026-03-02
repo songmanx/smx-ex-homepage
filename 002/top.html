@@ -1,0 +1,82 @@
+<html>
+<head>
+  <style type="text/css">
+    body {
+      margin: 0;
+      background: url(img/top.jpg) top left repeat-y fixed #6D4A24;
+    }
+    select {
+      background-color: #704c28;
+      color: #c8b8a0;
+    }
+    .table {
+      z-index: 2;
+      position: absolute;
+      top: 35px;
+      left: 475px;
+    }
+  </style>
+  <script>
+    if (document.images) {
+      // Preload images
+      const img1on = new Image();
+      img1on.src = "img/top12.jpg";
+
+      const img1off = new Image();
+      img1off.src = "img/top11.jpg";
+    }
+
+    function imgOn(imgName) {
+      if (document.images) {
+        document[imgName].src = window[`${imgName}on`].src;
+      }
+    }
+
+    function imgOff(imgName) {
+      if (document.images) {
+        document[imgName].src = window[`${imgName}off`].src;
+      }
+    }
+  </script>
+</head>
+<body text="#c8b8a0">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="580"></td>
+      <td width="170" align="center" valign="top">
+        <br><br>
+        <select name="lists" onchange="window.open(this.options[this.selectedIndex].value,'right'); this.selectedIndex=0;">
+          <option selected>메뉴 바로가기</option>
+          <option value="right.html">메인화면</option>
+          <option></option>
+          <option value="profile.html">프로필</option>
+          <option value="knowcof.html">커피알기</option>
+          <option value="hiscof.html">&nbsp;-커피역사</option>
+          <option value="crecof.html">&nbsp;-생산지역</option>
+          <option value="delcof.html">&nbsp;-커피의맛</option>
+          <option value="woncof.html">&nbsp;-원두커피</option>
+          <option value="detcof.html">&nbsp;-커피성분</option>
+          <option value="bobbcof.html">커피끓이기</option>
+          <option value="hotcof.html">&nbsp;-따뜻한커피</option>
+          <option value="colcof.html">&nbsp;-시원한커피</option>
+          <option value="instcof.html">커피기구</option>
+          <option value="withcof.html">커피와 함께</option>
+          <option value="cookcake.html">&nbsp;-쿠키앤케익</option>
+          <option value="beauty.html">&nbsp;-시(詩)</option>
+          <option value="http://bbs4u.lycos.co.kr/Board/ViewBoard.asp?bcode=fm1607766">커피이야기</option>
+          <option value="http://bbs4u.lycos.co.kr/Board/ViewBoard.asp?bcode=fm1607660">방명록</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <table class="table" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="105" height="35">
+        <a href="right.html" target="right" onmouseover="imgOn('img1')" onmouseout="imgOff('img1')">
+          <img src="img/top11.jpg" border="0" alt="메인화면으로" name="img1">
+        </a>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

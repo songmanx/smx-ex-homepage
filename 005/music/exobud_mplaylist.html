@@ -1,0 +1,80 @@
+<HTML>
+ <HEAD>
+  <TITLE>▒ ExoBUD™ PlayList ▒</TITLE>
+  <META name="Author" content="ExoBUD, Jinwoong Yu">
+  <META name="Keywords" content="ExoBUD™ MPlaylist">
+  <META name="Description" content="mp3,asf,wav,mid 등 뮤직플레이리스트">
+  <META http-equiv="Content-Type" content="text/html; charset=euc-kr">
+
+  <STYLE type="text/css"><!-- 
+      A:visited { color: #444444; text-decoration: none } 
+      A:active { color: #444444; text-decoration: none } 
+      A:hover {color:darkblue; text-decoration: none ; cursor:hand;}
+      A:link { color: #444444; text-decoration: none } 
+      BODY { scrollbar-face-color:white; scrollbar-shadow-color:#666666; 
+	scrollbar-highlight-color:#666666; scrollbar-3dlight-color:white; 
+	scrollbar-darkshadow-color:white; scrollbar-track-color:white;
+	scrollbar-arrow-color:#666666; 
+	font-size:12px; cursor:crosshair;
+	background:url(letter2.jpg) white no-repeat fixed  right 96%;} 
+
+	@font-face { font-family: wjsm; src:url(http://exobud.nayana.org/font/wj.eot); }
+
+	.text{ font-family: 굴림,돋움, verdana; font-size: 12px; color:silver; } 
+	.button1 {  border-bottom: silver 1px solid; border-left: silver 1px solid; 
+        	border-right: silver 1px solid; border-top: silver 1px solid;
+	color:silver; background-color:#222222; font-family: 굴림; top-margin:0px; font-size:11px;
+	width:140px; height:16px;} 
+     TD { font-family:돋움,굴림,verdana; font-size: 11px; color:silver;  }
+--></STYLE> 
+ </HEAD>
+
+<BODY  onload="this.focus()" text="silver" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 style="border: 0px solid black; margin: 0pt;">
+
+<!.. 지정된 부분이외에는 수정하지 마십시요 ..>
+
+<table border=0 cellpadding=0 cellspacing=0 width=100% height=100%>
+ <tr><td width="100%" height="22" bgcolor="#222222" align=center valign=center>
+     <INPUT type=button name="ExoBUDMPL" class="button1" value="ExoBUD™ MPlayer List" OnClick="this.blur();window.open('http://exobud.nayana.org','ExoBUD');">
+  </td>
+ </tr>
+
+ <tr>
+  <td width="100%" height="*%" valign="top" align="left" style="line-height:12px">
+  <br>
+   <script language="JavaScript">
+	var via = opener;
+	var write_via = "opener";
+
+	// 이 페이지를 다른 프레임에 포함시킬때는
+	// var via = parent.'exobud_mp.html이 포함된 프레임이명'; 을 씁니다.
+	// var write_via = "parent.'exobud_mp.html이포함된 프레임명'"; 을 씁니다.
+
+	// 이 페이지를 <iframe> 에 넣는 경우 opener 대신 parent로 바꿉니다
+	// var via = window.parent
+	// var write_via ="window.parent";
+
+	for (i=0; i <= via.ExoBUD_MP_TrackName.length -1; i++)
+	{
+		list_num = i + 1;
+		var elm_music = '&nbsp;[' + list_num + '] ' 
+		    elm_music = elm_music + '<a href=javascript:' + write_via + '.ExoBUD_MP_SelectTrack(' + i + ');'
+		    elm_music = elm_music + ' onclick="this.blur();">' + via.ExoBUD_MP_TrackName[i] + '</a>'
+		    elm_music = elm_music + '<hr size=1 width=265 style="border:silver 1px dashed">\n'
+		document.write(elm_music);
+	}
+    </script>
+   </td>
+  </tr>
+
+  <tr>
+        <td width="100%" height="20" bgcolor="#202020" align=right valign=center>
+        <a href="#" OnClick = "window.close();" onfocus='this.blur()'><img src="close.gif" width="35" height="10" border="0"></a> 
+        &nbsp;
+        </td>
+    </tr>
+</table>
+
+</body>
+
+</html>

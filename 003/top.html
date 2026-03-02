@@ -1,0 +1,53 @@
+<html>
+ <head>
+  <style type=text/css>
+   body {z-index:1;
+         margin-top:0px;
+         margin-left:0px;
+         margin-right:0px;
+         margin-bottom:0px;}
+   embed {z-index:2;
+          position:absolute;
+          top:30px;
+          left:300px;}
+   .main {z-index:2;
+          position:absolute;
+          top:1px;
+          left:610px;}
+  </style>
+
+  <!-- ? Ruffle 추가 -->
+  <script src="ruffle/ruffle.js"></script>
+
+  <script LANGUAGE="JavaScript">
+   <!--
+   if (document.images) {       //if image object is available
+   img1on = new Image();           // MouseOver Images
+   img1on.src = "main_image/main01.jpg";
+   img1off = new Image();           // MouseOut Images
+   img1off.src = "main_image/main.jpg";
+   }
+   function imgOn(imgName) {
+   if (document.images) {
+   document[imgName].src = eval(imgName + "on.src");        }}
+   function imgOff(imgName) {
+   if (document.images) {
+   document[imgName].src = eval(imgName + "off.src");        }}
+   button_a1=new Image();
+   button_b1=new Image();
+   button_c1=new Image();
+   button_d1=new Image();
+   //-->
+  </script>
+ </head>
+ <body>
+  <img src=main_image/top.jpg usemap=#title border=0>
+  <embed src=video/movie3.swf width="315" height="57">
+  <a href=right.html target=main onmouseover="imgOn('img1')" onmouseout="imgOff('img1')">
+   <img src=main_image/main.jpg class=main border=0 alt="처음으로" name=img1>
+  </a>
+  <map name=title>
+   <area shape=rect coords=0,0,164,93 href=right.html target=main>
+  </map>
+ </body>
+</html>

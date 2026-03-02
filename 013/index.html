@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Songm Mini Landing</title>
+
+<style>
+body{
+  margin:0;
+  background:#fff7fb;
+  font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+  text-align:center;
+}
+
+/* 상단 타이틀 */
+h1{
+  margin:40px 0 10px;
+  font-size:28px;
+  color:#ff5ca8;
+}
+
+.sub{
+  margin-bottom:40px;
+  color:#777;
+  font-size:14px;
+}
+
+/* 이미지 래퍼 */
+.container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:40px;
+  padding-bottom:60px;
+}
+
+/* 이미지 스타일 */
+.container img{
+  width:auto;           /* 확대/축소 금지 */
+  max-width:none;       /* 반응형 제한 제거 */
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transition:transform 0.2s ease;
+}
+
+/* 살짝 귀여운 hover */
+.container img:hover{
+  transform:translateY(-6px);
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌸 옛날 공부방 카페 대문 🌸</h1>
+<div class="sub">광주 일본어 공부방</div>
+
+<div class="container">
+  <img src="001.jpg" alt="001">
+  <img src="002.jpg" alt="002">
+  <img src="003.jpg" alt="003">
+  <img src="004.jpg" alt="004">
+    <img src="005.jpg" alt="005">
+	  <img src="006.jpg" alt="006">
+	    <img src="007.jpg" alt="007">
+</div>
+
+</body>
+</html>

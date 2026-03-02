@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Songm Y2K Archive</title>
+  <meta name="description" content="2001~2003 개인 홈피 아카이브 (Y2K CRT Edition)" />
+
+  <!-- Pixel-ish font (web-safe fallback included) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bgA:#0b0017;
+      --bgB:#001b2b;
+      --bgC:#12001f;
+
+      --hotPink:#ff3bd4;
+      --aqua:#38f6ff;
+      --lime:#b7ff3c;
+      --sun:#ffe45e;
+      --violet:#8a5cff;
+
+      --ink: rgba(255,255,255,.95);
+      --muted: rgba(255,255,255,.76);
+      --line: rgba(255,255,255,.18);
+
+      --radius: 18px;
+      --radius2: 26px;
+
+      --pix: "Press Start 2P", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --txt: "VT323", system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+
+      --shadow: 0 25px 70px rgba(0,0,0,.55);
+      --glow: 0 0 24px rgba(56,246,255,.35), 0 0 44px rgba(255,59,212,.22);
+    }
+
+    *{ box-sizing: border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      color: var(--ink);
+      font-family: var(--txt);
+      letter-spacing: .02em;
+      background:
+        radial-gradient(1200px 700px at 12% 12%, rgba(255,59,212,.40), transparent 55%),
+        radial-gradient(900px 600px at 88% 18%, rgba(56,246,255,.35), transparent 55%),
+        radial-gradient(1000px 700px at 40% 90%, rgba(183,255,60,.18), transparent 55%),
+        linear-gradient(180deg, var(--bgA), var(--bgB) 55%, var(--bgC));
+      overflow-x:hidden;
+    }
+
+    /* --- CRT Overlay: scanlines + vignette + noise --- */
+    .crt::before{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,.08) 0px,
+          rgba(255,255,255,.08) 1px,
+          rgba(0,0,0,.00) 2px,
+          rgba(0,0,0,.00) 4px
+        );
+      mix-blend-mode: overlay;
+      opacity:.28;
+      transform: translateZ(0);
+      z-index: 9990;
+    }
+    .crt::after{
+      content:"";
+      position:fixed; inset:-40px;
+      pointer-events:none;
+      background:
+        radial-gradient(closest-side at 50% 50%, rgba(0,0,0,0) 70%, rgba(0,0,0,.25) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+      opacity:.55;
+      z-index: 9991;
+    }
+
+    .wrap{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      padding: 26px 0 70px;
+      position:relative;
+    }
+
+    /* Floating stickers / shapes */
+    .sticker{
+      position:absolute;
+      width: 190px; height: 190px;
+      border-radius: 999px;
+      filter: blur(0px);
+      opacity:.9;
+      z-index: 0;
+      pointer-events:none;
+      box-shadow: var(--glow);
+      transform: rotate(-10deg);
+    }
+    .s1{
+      left: -50px; top: 30px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,228,94,.95), rgba(255,59,212,.65) 45%, rgba(138,92,255,.25) 70%, transparent 78%);
+    }
+    .s2{
+      right: -80px; top: 160px;
+      width: 260px; height: 260px;
+      transform: rotate(18deg);
+      background: radial-gradient(circle at 30% 30%, rgba(56,246,255,.90), rgba(183,255,60,.45) 45%, rgba(255,59,212,.25) 70%, transparent 78%);
+    }
+    .s3{
+      left: 60px; bottom: -90px;
+      width: 240px; height: 240px;
+      transform: rotate(-22deg);
+      background: radial-gradient(circle at 35% 35%, rgba(138,92,255,.9), rgba(255,59,212,.5) 45%, rgba(56,246,255,.2) 70%, transparent 78%);
+    }
+
+    header{
+      position:relative;
+      z-index: 2;
+      display:flex;
+      gap:16px;
+      flex-wrap: wrap;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom: 14px;
+    }
+
+    .badgeTop{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      font-family: var(--pix);
+      font-size: 11px;
+      line-height: 1;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.28);
+      background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+      box-shadow: var(--shadow), var(--glow);
+      text-shadow: 0 0 14px rgba(56,246,255,.35);
+    }
+    .badgeTop .spark{
+      width: 10px; height: 10px;
+      border-radius: 3px;
+      background: linear-gradient(135deg, var(--aqua), var(--hotPink));
+      box-shadow: 0 0 16px rgba(56,246,255,.6);
+    }
+
+    .titleBox{
+      max-width: 720px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    h1{
+      margin:0;
+      font-family: var(--pix);
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1.15;
+      letter-spacing: .02em;
+      text-shadow:
+        2px 0 0 rgba(255,59,212,.70),
+        -2px 0 0 rgba(56,246,255,.60),
+        0 0 18px rgba(255,255,255,.12);
+      transform: translateZ(0);
+    }
+    .sub{
+      margin:0;
+      font-size: 22px;
+      color: var(--muted);
+      text-shadow: 0 0 18px rgba(56,246,255,.18);
+    }
+
+    .topRight{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:flex-end;
+      min-width: 250px;
+      flex: 1;
+    }
+
+    .pillRow{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      font-family: var(--pix);
+      font-size: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.26);
+      background: rgba(0,0,0,.22);
+      box-shadow: var(--glow);
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      white-space: nowrap;
+    }
+    .pill b{ color: #fff; }
+
+    .hero{
+      position:relative;
+      z-index: 2;
+      border-radius: var(--radius2);
+      border: 2px solid rgba(255,255,255,.22);
+      background:
+        linear-gradient(135deg, rgba(255,59,212,.18), rgba(56,246,255,.14) 45%, rgba(183,255,60,.10)),
+        radial-gradient(900px 240px at 20% 20%, rgba(255,228,94,.18), transparent 60%),
+        rgba(0,0,0,.25);
+      box-shadow: var(--shadow), var(--glow);
+      overflow:hidden;
+      padding: 16px 14px;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        conic-gradient(from 180deg at 50% 50%,
+          rgba(56,246,255,.25),
+          rgba(255,59,212,.25),
+          rgba(183,255,60,.20),
+          rgba(255,228,94,.20),
+          rgba(138,92,255,.25),
+          rgba(56,246,255,.25)
+        );
+      opacity:.25;
+      filter: blur(18px);
+      pointer-events:none;
+    }
+
+    .heroInner{
+      position:relative;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap: wrap;
+    }
+
+    .searchWrap{
+      flex:1;
+      min-width: 240px;
+      max-width: 520px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      justify-content:flex-end;
+    }
+
+    .search{
+      width:100%;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.26);
+      outline:none;
+      color: rgba(255,255,255,.96);
+      background: rgba(0,0,0,.28);
+      box-shadow: inset 0 0 0 2px rgba(0,0,0,.25), var(--glow);
+      font-family: var(--txt);
+      font-size: 22px;
+    }
+    .search::placeholder{ color: rgba(255,255,255,.60); }
+
+    .hint{
+      font-family: var(--pix);
+      font-size: 10px;
+      letter-spacing: .10em;
+      color: rgba(255,255,255,.78);
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+      align-items:center;
+    }
+    .kbd{
+      border: 2px solid rgba(255,255,255,.22);
+      border-bottom-width: 3px;
+      padding: 6px 10px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.25);
+      box-shadow: 0 0 16px rgba(255,59,212,.18);
+    }
+
+    .grid{
+      position:relative;
+      z-index: 2;
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .topRight{ align-items:flex-start; }
+      .pillRow{ justify-content:flex-start; }
+      .hint{ justify-content:flex-start; }
+      .searchWrap{ justify-content:flex-start; max-width:none; width:100%; }
+    }
+    @media (max-width: 620px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* Y2K Card */
+    .card{
+      position:relative;
+      border-radius: var(--radius);
+      border: 2px solid rgba(255,255,255,.22);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)),
+        radial-gradient(900px 280px at 20% 15%, rgba(255,59,212,.20), transparent 60%),
+        radial-gradient(900px 280px at 80% 20%, rgba(56,246,255,.20), transparent 60%),
+        rgba(0,0,0,.18);
+      box-shadow: var(--shadow), var(--glow);
+      overflow:hidden;
+      transform: translateZ(0);
+      transition: transform .18s ease, filter .18s ease;
+    }
+    .card::after{
+      /* glossy highlight */
+      content:"";
+      position:absolute; inset:-2px;
+      background: linear-gradient(120deg, rgba(255,255,255,.18), transparent 35%, transparent 65%, rgba(255,255,255,.10));
+      opacity:.35;
+      pointer-events:none;
+      transform: translateZ(0);
+    }
+
+    .card a{
+      display:block;
+      text-decoration:none;
+      color: inherit;
+      padding: 14px 14px 12px;
+      min-height: 115px;
+      position:relative;
+    }
+
+    .topRow{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-family: var(--pix);
+      font-size: 10px;
+      letter-spacing:.10em;
+      text-transform: uppercase;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 0 18px rgba(56,246,255,.16);
+      white-space:nowrap;
+    }
+    .tag .dot{
+      width: 10px; height: 10px;
+      border-radius: 3px;
+      background: linear-gradient(135deg, var(--lime), var(--aqua));
+      box-shadow: 0 0 16px rgba(183,255,60,.55);
+    }
+
+    .folder{
+      font-family: var(--pix);
+      font-size: 10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 2px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.22);
+      box-shadow: 0 0 18px rgba(255,59,212,.18);
+      white-space:nowrap;
+    }
+
+    .title{
+      font-family: var(--txt);
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: .02em;
+      text-shadow:
+        1px 0 0 rgba(255,59,212,.55),
+        -1px 0 0 rgba(56,246,255,.45),
+        0 0 18px rgba(0,0,0,.55);
+    }
+    .desc{
+      margin-top: 8px;
+      font-size: 20px;
+      color: rgba(255,255,255,.78);
+      line-height: 1.35;
+    }
+
+    /* Hover = rainbow warp + slight glitch */
+    .card:hover{
+      transform: translateY(-5px) rotate(-.25deg);
+      filter: saturate(1.25) contrast(1.08);
+    }
+    .card:hover .glitch{
+      animation: glitch 1.1s steps(2, end) infinite;
+    }
+    @keyframes glitch{
+      0%{ text-shadow: 2px 0 rgba(255,59,212,.75), -2px 0 rgba(56,246,255,.60), 0 0 18px rgba(0,0,0,.4); }
+      20%{ text-shadow: -3px 0 rgba(255,59,212,.75), 3px 0 rgba(56,246,255,.60), 0 0 18px rgba(0,0,0,.4); }
+      40%{ transform: translateX(1px); }
+      60%{ transform: translateX(-1px); }
+      80%{ transform: translateX(1px); }
+      100%{ text-shadow: 2px 0 rgba(255,59,212,.75), -2px 0 rgba(56,246,255,.60), 0 0 18px rgba(0,0,0,.4); }
+    }
+
+    footer{
+      position:relative;
+      z-index: 2;
+      margin-top: 18px;
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,.72);
+      font-family: var(--pix);
+      font-size: 10px;
+      letter-spacing:.10em;
+      text-transform: uppercase;
+      opacity:.9;
+      text-shadow: 0 0 16px rgba(56,246,255,.18);
+    }
+
+    /* Tiny sparkle emojis that float */
+    .sparkle{
+      position: absolute;
+      inset: 0;
+      pointer-events:none;
+      z-index: 1;
+      opacity:.85;
+    }
+    .sparkle span{
+      position:absolute;
+      font-size: 18px;
+      filter: drop-shadow(0 0 10px rgba(255,59,212,.35));
+      animation: floaty 6.5s ease-in-out infinite;
+    }
+    @keyframes floaty{
+      0%,100%{ transform: translateY(0); opacity:.85; }
+      50%{ transform: translateY(-14px); opacity:1; }
+    }
+
+    /* Reduce motion preference */
+    @media (prefers-reduced-motion: reduce){
+      .sparkle span, .card:hover .glitch{ animation:none !important; }
+      .card{ transition:none; }
+    }
+  </style>
+</head>
+
+<body class="crt">
+  <div class="wrap">
+    <div class="sticker s1"></div>
+    <div class="sticker s2"></div>
+    <div class="sticker s3"></div>
+
+    <div class="sparkle" aria-hidden="true">
+      <span style="left:6%; top:14%; animation-delay:.1s;">✨</span>
+      <span style="left:22%; top:7%; animation-delay:1.0s;">💿</span>
+      <span style="left:42%; top:12%; animation-delay:.6s;">🫧</span>
+      <span style="left:68%; top:9%; animation-delay:1.4s;">⭐</span>
+      <span style="left:84%; top:18%; animation-delay:.9s;">🪩</span>
+      <span style="left:10%; top:72%; animation-delay:1.2s;">🍬</span>
+      <span style="left:86%; top:74%; animation-delay:.3s;">🌈</span>
+    </div>
+
+    <header>
+      <div class="titleBox">
+        <div class="badgeTop"><span class="spark"></span> Y2K • CRT • Archive • Local</div>
+        <h1>SONGM HOMEPI — <span style="color:var(--sun)">2001–2003</span></h1>
+        <p class="sub">옛날 처음 만든 홈페이지들 <br><span style="font-family:var(--mono)">추억용으로 모아둠</span> 💫</p>
+      </div>
+
+      <div class="topRight">
+        <div class="pillRow">
+          <div class="pill"><b>13</b> PAGES</div>
+          <div class="pill">FOLDERS <b>001–013</b></div>
+          <div class="pill">PRESS <b>/</b> TO SEARCH</div>
+        </div>
+
+        <div class="hero" aria-label="search">
+          <div class="heroInner">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <div class="hint" style="justify-content:flex-start">
+                <span class="kbd">Enter</span> 첫 결과로 이동
+                <span class="kbd">Esc</span> 검색 지우기
+              </div>
+              <div class="hint" style="justify-content:flex-start">
+                <span class="kbd">/</span> 검색창 포커스
+              </div>
+            </div>
+            <div class="searchWrap">
+              <input id="q" class="search" type="search" placeholder="Search: 커피 / 교회 / Voice / Aki ..." autocomplete="off" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" id="grid" aria-label="pages grid"></main>
+
+    <footer>
+      <div>TIP: 검색 후 ENTER = 1st result 🚀</div>
+      <div>© 2001–2003 • Y2K CRT EDITION</div>
+    </footer>
+  </div>
+
+  <script>
+    // 001~013 매핑 (사용자가 준 순서 그대로)
+    const pages = [
+      { folder: "001", date: "2001.01", title: "Songm의 홈페이지", note: "Homebase / Profile" },
+      { folder: "002", date: "2001.06", title: "송의 커피하우스", note: "Coffee & chill" },
+      { folder: "003", date: "2001.09", title: "동 산 교 회", note: "Community / Church" },
+      { folder: "004", date: "2001.11", title: "▒▒▒▒ Communication ▒▒▒▒", note: "Board / Message" },
+      { folder: "005", date: "2002.01", title: "2002 Voice Cafe", note: "Voice cafe era" },
+      { folder: "006", date: "2002.04", title: "Millimeter Wave Lab,", note: "Lab / Research" },
+      { folder: "007", date: "2002.05", title: "창현쇼핑몰", note: "Shopping mall" },
+      { folder: "008", date: "2002.06", title: "정아의 홈페이지", note: "Personal page" },
+      { folder: "010", date: "2002.12", title: "차정아클럽 - 여성패션쇼핑몰", note: "Fashion club" },
+      { folder: "011", date: "2003.01", title: "2003 Neo Voice Cafe", note: "Neo era" },
+      { folder: "012", date: "", title: "Homepi for Aki", note: "Aki homepage" },
+      { folder: "013", date: "", title: "일어까페대문", note: "Japanese cafe gate" },
+    ];
+
+    const grid = document.getElementById("grid");
+    const input = document.getElementById("q");
+
+    const esc = s => (s ?? "").replace(/[&<>"']/g, m => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[m]));
+
+    function render(list){
+      grid.innerHTML = list.map((p, idx) => {
+        const href = `./${p.folder}/index.html`;
+        const d = p.date ? p.date : "—";
+        const hue = (idx * 33) % 360; // just for some variety
+        return `
+          <article class="card" data-title="${esc((p.title+' '+(p.note||'')+' '+(p.date||'')).toLowerCase())}" data-href="${href}"
+                   style="--h:${hue};">
+            <a href="${href}">
+              <div class="topRow">
+                <div class="tag"><span class="dot"></span>${esc(d)}</div>
+                <div class="folder">/${p.folder}</div>
+              </div>
+              <div class="title glitch">${esc(p.title)}</div>
+              <div class="desc">${esc(p.note || "Open")}</div>
+            </a>
+          </article>
+        `;
+      }).join("");
+    }
+
+    render(pages);
+
+    function filter(){
+      const q = (input.value || "").trim().toLowerCase();
+      const cards = [...document.querySelectorAll(".card")];
+      cards.forEach(c => {
+        const t = c.getAttribute("data-title") || "";
+        c.style.display = (!q || t.includes(q)) ? "" : "none";
+      });
+    }
+
+    input.addEventListener("input", filter);
+
+    // Enter: 첫 번째 보이는 카드로 이동 / Esc: 검색 지우기 / "/" : 검색창 포커스
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        input.value = "";
+        input.blur();
+        filter();
+      }
+      if (e.key === "Enter" && document.activeElement === input) {
+        const first = [...document.querySelectorAll(".card")]
+          .find(c => c.style.display !== "none");
+        if (first) window.location.href = first.getAttribute("data-href");
+      }
+      if (e.key === "/" && document.activeElement !== input) {
+        e.preventDefault();
+        input.focus();
+      }
+    });
+  </script>
+</body>
+</html>
